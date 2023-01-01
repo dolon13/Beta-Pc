@@ -269,6 +269,48 @@ class Welcome extends CI_Controller {
 	}
 
 
+	// community
+	public function community_page(){
+	      
+		if ($this->session->userdata('logged_in')){
+			$data['baseurl'] = $this->config->item('base_url');
+			$data['header'] = $this->load->view('community/header', $data, TRUE);
+			$data['footer'] = $this->load->view('community/footer', $data, TRUE);
+			$data['posts'] = $this->User_model->getData('post');
+			
+			$this->load->view('community/community', $data);
+		}else{
+			redirect(base_url()."logSign","refresh");
+		}
+	}
+
+	public function create_community_post(){
+	      
+		$data['baseurl'] = $this->config->item('base_url');
+		$data['pagename'] = 'post_create';
+        $data['header'] = $this->load->view('add/header', $data, TRUE);
+        $data['footer'] = $this->load->view('add/footer', $data, TRUE);
+        
+        $this->load->view('community/create_post', $data);
+	}
+
+	public function post_insert(){
+	      
+		$data['title'] = $this->input->post('title');
+		$data['content'] = $this->input->post('content');
+		$data['user'] = $this->session->userdata('name');
+		$test = $this->User_model->post_in($data);
+		if($test){
+			$this->session->set_flashdata('response',"Post Created");
+			redirect(base_url()."welcome/create_community_post",'refresh');
+		}else{
+			$this->session->set_flashdata('response',"Something goes wrong please try again");
+			redirect(base_url()."welcome/create_community_post",'refresh');
+		}
+	}
+
+
+
 	// Add items
 	public function add_item(){
 	      
@@ -796,6 +838,8 @@ class Welcome extends CI_Controller {
 			}
 
 	}
+
+
 }
 ?>
 

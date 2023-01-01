@@ -63,6 +63,14 @@ class User_model extends CI_Model {
         return $query->result();
     }
 
+    public function getComments($post_id){
+        $this->db->select('*');
+        $this->db->from('comment');
+        $this->db->where('post_id',$post_id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function createTable(){
 
         $this->db->set('user_name',$this->session->userdata('user'));
@@ -117,6 +125,12 @@ class User_model extends CI_Model {
         );
 
         $this->db->insert('review',$data);
+    }
+
+    public function post_in($data){
+        $t = $this->db->insert('post',$data);
+        //echo $t;
+        return $t;
     }
 
 

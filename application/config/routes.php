@@ -57,6 +57,9 @@ $route['logSign'] = 'welcome/logSign';
 $route['pc_build'] = 'welcome/pc_built';
 $route['pcbuilder'] = 'welcome/pcbuilder';
 
+$route['community'] = 'welcome/community_page';
+$route['create_post'] = 'welcome/create_community_post';
+
 $route['add'] = 'welcome/add_item';
 
 $route['add/psu'] = 'welcome/ad_psu';
