@@ -137,6 +137,7 @@
 			<!-- end: header -->
 
 			<div class="inner-wrapper">
+			<?php if ($pagename != 'post_create'){ ?>
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
 				
@@ -148,6 +149,7 @@
 				            <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
 				        </div>
 				    </div>
+					
 				
 				    <div class="nano">
 				        <div class="nano-content">
@@ -214,6 +216,7 @@
 				
 				</aside>
 				<!-- end: sidebar -->
+				<?php } ?>
 	
 				
 				

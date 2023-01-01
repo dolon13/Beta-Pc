@@ -58,30 +58,7 @@ $this->db->update($pagename);
 							<div class="product-view">
 								<img src="<?php echo $baseurl ?>/uploads/<?php echo $pagename?>/<?php echo $p->path ?>" alt="">
 							</div>
-							<!-- <div class="product-view">
-								<img src="./img/main-product02.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/main-product03.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/main-product04.jpg" alt="">
-							</div> -->
 						</div>
-						<!-- <div id="product-view">
-							<div class="product-view">
-								<img src="./img/thumb-product01.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product02.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product03.jpg" alt="">
-							</div>
-							<div class="product-view">
-								<img src="./img/thumb-product04.jpg" alt="">
-							</div>
-						</div> -->
 					</div>
 					<div class="col-md-6">
 						<div class="product-body">

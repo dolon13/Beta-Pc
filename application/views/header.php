@@ -261,6 +261,7 @@
                         <?php $this->session->set_userdata('prev',$_SERVER['REQUEST_URI']); ?>
                         <!-- <?php echo $this->session->userdata('prev') ?> -->
                         <li><a href="<?php echo $baseurl ?>pc_build">Built Your PC</a></li>
+                        <li><a href="<?php echo $baseurl ?>community">Community</a></li>
                     </ul>
                 </div>
                 <!-- menu nav -->
